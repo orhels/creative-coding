@@ -2,6 +2,7 @@ import React from 'react'
 import { HelloWorldSketch } from './sketches/HelloWorldSketch.tsx'
 import { HelloWorld2Sketch } from './sketches/HelloWorld2Sketch.tsx'
 import { ShaderTest } from './sketches/shader/ShaderTest.tsx'
+import { GradientShaderSketch } from './sketches/gradient-shader/GradientShaderSketch.tsx'
 
 export type Sketch = {
     name: string
@@ -24,5 +25,10 @@ export const sketches: Sketch[] = [
         name: 'Shader Test',
         path: 'shader-test',
         Sketch: ShaderTest,
+    },
+    {
+        name: 'Gradient Shader',
+        path: 'gradient-shader',
+        Sketch: GradientShaderSketch,
     },
 ]
