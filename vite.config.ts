@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import checker from 'vite-plugin-checker'
+import glsl from 'vite-plugin-glsl'
 
 const checkerPlugin = checker({
     typescript: true,
@@ -14,5 +15,5 @@ const checkerPlugin = checker({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), checkerPlugin],
+    plugins: [react(), checkerPlugin, glsl({ watch: true })],
 })
