@@ -1,22 +1,18 @@
-import { Sketch, sketches } from './sketches.ts'
-import { useState } from 'react'
+import { sketches } from './sketches.ts'
+import { Link } from 'react-router-dom'
 
 export function SketchList() {
-    const [activeSketch, setActiveSketch] = useState<null | Sketch>()
-
     return (
         <div>
-            <ul>
-                {sketches.map((sketch) => (
-                    <li
-                        key={sketch.name}
-                        onClick={() => setActiveSketch(sketch)}
-                    >
-                        {sketch.name}
-                    </li>
-                ))}
-            </ul>
-            {activeSketch?.sketch()}
+            <nav>
+                <ul>
+                    {sketches.map((sketch) => (
+                        <li key={sketch.path}>
+                            <Link to={sketch.path}>{sketch.name}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
         </div>
     )
 }
