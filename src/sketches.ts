@@ -1,40 +1,40 @@
-import React from 'react'
-import { HelloWorldSketch } from './sketches/HelloWorldSketch.tsx'
-import { HelloWorld2Sketch } from './sketches/HelloWorld2Sketch.tsx'
-import { ShaderTest } from './sketches/shader/ShaderTest.tsx'
-import { GradientShaderSketch } from './sketches/gradient-shader/GradientShaderSketch.tsx'
-import { ShakingDotsShader } from './sketches/shaking-dots-shader/ShakingDotsShader.tsx'
+import { helloWorld } from './sketches/helloWorldSketch.ts'
+import { helloWorld2Sketch } from './sketches/helloWorld2Sketch.ts'
+import { shaderTest } from './sketches/shader/shaderTest.ts'
+import { gradientShaderSketch } from './sketches/gradient-shader/gradientShaderSketch.ts'
+import { shakingDotsShader } from './sketches/shaking-dots-shader/shakingDotsShader.ts'
+import { Sketch } from './types.ts'
 
-export type Sketch = {
+export type SketchWrapper = {
     name: string
     path: string
-    Sketch: React.FC
+    sketch: Sketch
 }
 
-export const sketches: Sketch[] = [
+export const sketches: SketchWrapper[] = [
     {
         name: 'Hello World',
         path: 'hello-world',
-        Sketch: HelloWorldSketch,
+        sketch: helloWorld,
     },
     {
         name: 'Hello World 2',
         path: 'hello-world-2',
-        Sketch: HelloWorld2Sketch,
+        sketch: helloWorld2Sketch,
     },
     {
         name: 'Shader Test',
         path: 'shader-test',
-        Sketch: ShaderTest,
+        sketch: shaderTest,
     },
     {
         name: 'Gradient Shader',
         path: 'gradient-shader',
-        Sketch: GradientShaderSketch,
+        sketch: gradientShaderSketch,
     },
     {
         name: 'Shaking Dots Shader',
         path: 'shaking-dots-shader',
-        Sketch: ShakingDotsShader,
+        sketch: shakingDotsShader,
     },
 ]

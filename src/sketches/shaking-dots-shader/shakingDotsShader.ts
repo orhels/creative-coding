@@ -1,9 +1,8 @@
-import { P5CanvasInstance, ReactP5Wrapper } from '@p5-wrapper/react'
 import vert from './vert.glsl'
 import frag from './frag.glsl'
-import { Shader, Vector } from 'p5'
+import p5, { Shader, Vector } from 'p5'
 
-function sketch(p5: P5CanvasInstance) {
+export function shakingDotsShader(p5: p5) {
     let shader: Shader
     const numCircles = 100
     let circles: Vector[] = []
@@ -34,8 +33,4 @@ function sketch(p5: P5CanvasInstance) {
         p5.clear()
         p5.rect(0, 0, p5.width, p5.height)
     }
-}
-
-export function ShakingDotsShader() {
-    return <ReactP5Wrapper sketch={sketch} />
 }

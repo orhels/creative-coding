@@ -1,6 +1,6 @@
-import { P5CanvasInstance, ReactP5Wrapper } from '@p5-wrapper/react'
+import { Sketch } from '../types.ts'
 
-function sketch(p5: P5CanvasInstance) {
+export const helloWorld: Sketch = (p5) => {
     p5.setup = () => p5.createCanvas(600, 400, p5.WEBGL)
 
     p5.draw = () => {
@@ -13,8 +13,4 @@ function sketch(p5: P5CanvasInstance) {
         p5.sphere(100, 360, 360)
         p5.pop()
     }
-}
-
-export function HelloWorldSketch() {
-    return <ReactP5Wrapper sketch={sketch} />
 }
